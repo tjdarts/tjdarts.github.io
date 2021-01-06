@@ -17,7 +17,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v3';
+const PRECACHE = 'precache-v4';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -40,7 +40,7 @@ const SOUND_EFFECT_URLS = [
   './resources/sound-effects/default/sbull.webm',
   './resources/sound-effects/default/win.webm'
 ]
-const PRECACHE_URLS = ['index.html', './'].concat(FONT_URLS, IMAGE_URLS, SOUND_EFFECT_URLS);
+const PRECACHE_URLS = [].concat(FONT_URLS, IMAGE_URLS, SOUND_EFFECT_URLS);
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', event => {

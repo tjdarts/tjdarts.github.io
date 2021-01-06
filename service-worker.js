@@ -9,21 +9,38 @@
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
+
+ Updates:
+ - Add URLs of the resources we want to cache in the App
  */
 
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v1';
+const PRECACHE = 'precache-v3';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
-const PRECACHE_URLS = [
-  'index.html',
-  './',
+const FONT_URLS = [
   './resources/fonts/NotoSerifTC-Black.otf',
   './resources/fonts/RussoOne-Regular.ttf'
-];
+]
+const IMAGE_URLS = [
+  './resources/images/background/hallstatt.jpg',
+]
+const SOUND_EFFECT_URLS = [
+  './resources/sound-effects/default/back.webm',
+  './resources/sound-effects/default/bust.webm',
+  './resources/sound-effects/default/dart.webm',
+  './resources/sound-effects/default/dbull.webm',
+  './resources/sound-effects/default/game_on.webm',
+  './resources/sound-effects/default/hover.webm',
+  './resources/sound-effects/default/next.webm',
+  './resources/sound-effects/default/press.webm',
+  './resources/sound-effects/default/sbull.webm',
+  './resources/sound-effects/default/win.webm'
+]
+const PRECACHE_URLS = ['index.html', './'].concat(FONT_URLS, IMAGE_URLS, SOUND_EFFECT_URLS);
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', event => {

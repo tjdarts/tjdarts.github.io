@@ -17,7 +17,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v8';
+const PRECACHE = 'precache-v9';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -32,13 +32,16 @@ const IMAGE_URLS = [
 const SOUND_EFFECT_URLS = [
   './resources/sound-effects/default/back.webm',
   './resources/sound-effects/default/bust.webm',
+  './resources/sound-effects/default/coin.webm',
   './resources/sound-effects/default/dart.webm',
   './resources/sound-effects/default/dbull.webm',
+  './resources/sound-effects/default/fail.webm',
   './resources/sound-effects/default/game_on.webm',
   './resources/sound-effects/default/hover.webm',
   './resources/sound-effects/default/next.webm',
   './resources/sound-effects/default/press.webm',
   './resources/sound-effects/default/sbull.webm',
+  './resources/sound-effects/default/warn.webm',
   './resources/sound-effects/default/win.webm',
   './resources/sound-effects/ninja/bgm.webm',
   './resources/sound-effects/ninja/dart.webm',

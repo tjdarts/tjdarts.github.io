@@ -17,7 +17,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v9';
+const PRECACHE = 'precache-v10';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -27,7 +27,13 @@ const FONT_URLS = [
 ]
 const IMAGE_URLS = [
   './resources/images/background/hallstatt.jpg',
-  './resources/images/background/ninja.png'
+  './resources/images/background/binz-beach.jpg',
+  './resources/images/background/kings-chair-beach.jpg',
+  './resources/images/background/lifeguards-nearby-pier-sellin.jpg',
+  './resources/images/background/ninja.png',
+  './resources/images/background/pier-sellin.jpg',
+  './resources/images/background/sellin-dog-beach.jpg',
+  './resources/images/background/sellin-east-train-station.jpg'
 ]
 const SOUND_EFFECT_URLS = [
   './resources/sound-effects/default/back.webm',

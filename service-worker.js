@@ -63,6 +63,7 @@ if (navigator.connection.type !== 'none') {
   caches.open(RUNTIME).then(cache => Promise.all([
           cache.delete('./'),
           cache.delete('./index.html'),
+          cache.delete('./service-worker.js'),
           cache.delete('./static/js/main.chunk.js')
         ]))
         .then(() => handleCaches())

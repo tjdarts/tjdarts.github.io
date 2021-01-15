@@ -19,7 +19,7 @@
 // Names of the two caches used in this version of the service worker.
 // Change to v2, etc. when you update any of the local resources, which will
 // in turn trigger the install event again.
-const PRECACHE = 'precache-v11';
+const PRECACHE = 'precache-v12';
 const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
@@ -60,13 +60,14 @@ const SOUND_EFFECT_URLS = [
 const PRECACHE_URLS = [].concat(FONT_URLS, IMAGE_URLS, SOUND_EFFECT_URLS);
 
 if (navigator.connection.type !== 'none') {
-  caches.open(RUNTIME).then(cache => Promise.all([
+  caches.open(RUNTIME)
+        .then(cache => Promise.all([
           cache.delete('./'),
           cache.delete('./index.html'),
           cache.delete('./service-worker.js'),
           cache.delete('./static/js/main.chunk.js')
         ]))
-        .then(() => handleCaches())
+        .finally(() => handleCaches())
 } else {
   handleCaches()
 }

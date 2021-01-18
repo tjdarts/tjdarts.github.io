@@ -73,6 +73,7 @@ self.addEventListener('install', event => {
             cache.delete('./game-menu/games'),
             cache.delete('./game-menu/players'),
             cache.delete('./game'),
+            cache.delete('./static/js/main.chunk.js'), // For always updating to the latest version in the development build.
           ]) :
           Promise.resolve()
       )

@@ -69,12 +69,12 @@ self.addEventListener('install', event => {
             cache.delete('./'),
             cache.delete('./index.html'),
             cache.delete('./service-worker.js'),
-            cache.delete('./static/js/main.chunk.js')
+            cache.delete('./static/js/main.chunk.js'),
             cache.delete('./options')
           ]) :
           Promise.resolve()
       )
-      .finally(() => 
+      .finally(() =>
         caches.open(PRECACHE)
           .then(cache => cache.addAll(PRECACHE_URLS))
           .then(self.skipWaiting())
